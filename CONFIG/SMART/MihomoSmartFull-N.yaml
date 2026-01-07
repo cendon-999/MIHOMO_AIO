@@ -337,7 +337,7 @@ proxy-groups:
   - {name: 冷门自选, type: select, include-all: true, filter: *FilterOT, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Europe_Map.png}
   - {name: 全球手动, type: select, include-all: true, filter: *FilterAL, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Clubhouse.png}
 
-  - {name: 游戏节点, <<: *SelectPY, include-all: true, filter: *FilterAL, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/PlayStation.png}
+  - {name: 游戏节点, type: select, include-all: true, filter: *FilterAL, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/PlayStation.png}
   - {name: 自建/家宽节点, type: select, include-all: true, filter: "(?=.*(?i)(自建|home))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png"}
   - {name: 中转服务, type: select, proxies: [香港智能, 台湾智能, 日本智能, 狮城智能, 韩国智能, 美国智能, 英国智能, 欧洲智能, 全球手动, 直接连接, 自建/家宽节点], icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png, include-all: true, filter: *FilterAL}
 
