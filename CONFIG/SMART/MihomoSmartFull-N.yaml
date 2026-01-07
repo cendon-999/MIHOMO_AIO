@@ -46,7 +46,7 @@ FilterAL: &FilterAL '^(?!.*(无法|说明|使用|提示|特别|访问|支持|教
 
 # 策略组代理列表模板
 SelectFB: &SelectFB {type: select, proxies: [故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 直接连接, 自建/家宽节点]}
-SelectPY: &SelectPY {type: select, proxies: [默认代理, 故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 直接连接, 自建/家宽节点]}
+SelectPY: &SelectPY {type: select, proxies: [默认代理, 故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 直接连接, 游戏节点, 自建/家宽节点]}
 SelectDC: &SelectDC {type: select, proxies: [直接连接, 默认代理, 故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 自建/家宽节点]}
 SelectHK: &SelectHK {type: select, proxies: [香港策略, 默认代理, 故障转移, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 直接连接, 自建/家宽节点]}
 SelectSG: &SelectSG {type: select, proxies: [狮城策略, 默认代理, 故障转移, 香港策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 直接连接, 自建/家宽节点]}
@@ -251,7 +251,7 @@ dns:
   
   # 国内DNS
   direct-nameserver:
-    - system
+    # - system
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
     - https://223.5.5.5/dns-query#h3=true
