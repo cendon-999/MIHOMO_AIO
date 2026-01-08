@@ -251,7 +251,7 @@ dns:
 # ==================== 代理策略组 (优化精简版) ====================
 proxy-groups:
   # ==================== 核心策略组 ====================
-  - {name: 节点选择, type: select, proxies: [故障转移, 香港节点, 新加坡节点, 日本节点, 台湾节点, 韩国节点, 美国节点, 欧洲节点, 冷门节点, 自建/家宽节点, 全部节点], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/select.png"}
+  - {name: 节点选择, type: select, proxies: [故障转移, 香港节点, 新加坡节点, 日本节点, 台湾节点, 韩国节点, 美国节点, 欧洲节点, 冷门节点, 自建/家宽节点, 全球直连, 全部节点], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/select.png"}
   - {name: 故障转移, <<: *BaseFB, proxies: [香港节点, 新加坡节点, 日本节点, 美国节点], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/fallback.png"}
   - {name: 全球直连, type: select, proxies: [DIRECT], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/direct.png"}
   - {name: 广告拦截, type: select, proxies: [REJECT, REJECT-DROP, DIRECT], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/block.png"}
