@@ -2,7 +2,7 @@
 # 终极优化版 TheSmart 配置
 # 原始配置: 666OS/MihomoPro.ymal & Lanlan13-14/configfull.yaml
 # 配置版本: v260104-Final
-# 优化日期: 2026-01-04
+# 优化日期: 2026-01-10
 # 优化内容: 精简策略组、去重规则集、优化规则顺序
 #####################################
 
@@ -332,12 +332,12 @@ proxy-groups:
   - {name: 美国自动, <<: *BaseUT, include-all: true, filter: *FilterUS, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png"}
 
   # ==================== 负载均衡组 ====================
-  - {name: 香港智能, <<: *BaseLB, include-all: true, filter: *FilterHK, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
-  - {name: 狮城智能, <<: *BaseLB, include-all: true, filter: *FilterSG, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
-  - {name: 日本智能, <<: *BaseLB, include-all: true, filter: *FilterJP, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
-  - {name: 台湾智能, <<: *BaseLB, include-all: true, filter: *FilterTW, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
-  - {name: 韩国智能, <<: *BaseLB, include-all: true, filter: *FilterKR, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
-  - {name: 美国智能, <<: *BaseLB, include-all: true, filter: *FilterUS, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
+  - {name: 香港智能, <<: *BaseLB, include-all: true, filter: *FilterHK, policy-priority: '优:2;次:1;备:0.2', icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
+  - {name: 狮城智能, <<: *BaseLB, include-all: true, filter: *FilterSG, policy-priority: '优:2;次:1;备:0.2', icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
+  - {name: 日本智能, <<: *BaseLB, include-all: true, filter: *FilterJP, policy-priority: '优:2;次:1;备:0.2', icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
+  - {name: 台湾智能, <<: *BaseLB, include-all: true, filter: *FilterTW, policy-priority: '优:2;次:1;备:0.2', icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
+  - {name: 韩国智能, <<: *BaseLB, include-all: true, filter: *FilterKR, policy-priority: '优:2;次:1;备:0.2', icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
+  - {name: 美国智能, <<: *BaseLB, include-all: true, filter: *FilterUS, policy-priority: '优:2;次:1;备:0.2', icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
 
   # ==================== 路由规则 (优化顺序) ====================
 
