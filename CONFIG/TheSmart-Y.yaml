@@ -370,9 +370,6 @@ rules:
   # ==================== 金融 / 支付 ====================
   - RULE-SET,paypal,PayPal
 
-  # ==================== 代理白名单 ====================
-  - RULE-SET,proxy,节点选择
-
   # ==================== AI ====================
   - RULE-SET,ai,人工智能
   - RULE-SET,aiip,人工智能,no-resolve
@@ -456,6 +453,7 @@ rules:
   # ==================== GFW / GEO ====================
   - RULE-SET,gfw,节点选择
   - RULE-SET,geolocation-!cn,节点选择
+  - RULE-SET,proxy,节点选择
 
   # ==================== 国内兜底 ====================
   - RULE-SET,cn,全球直连
@@ -559,14 +557,14 @@ rule-providers:
   paypal: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
   
   # ==================== 代理和直连 ====================
-  proxy: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/Lanlan13-14/Rules/main/rules/Domain/proxy.mrs"}
-  gfw: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
+  proxy: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/HenryChiao/mihomo_yamls/refs/heads/ruleset/meta/domain/proxy.mrs"}
+  gfw: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/HenryChiao/mihomo_yamls/refs/heads/ruleset/meta/domain/gfw.mrs"}
   geolocation-!cn: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
-  cn: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
+  cn: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/HenryChiao/mihomo_yamls/refs/heads/ruleset/meta/domain/cn.mrs"}
   
   # ==================== IP规则 ====================
-  private_ip: {<<: *BehaviorIP, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"}
-  cn_ip: {<<: *BehaviorIP, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
+  private_ip: {<<: *BehaviorIP, url: "https://raw.githubusercontent.com/HenryChiao/mihomo_yamls/refs/heads/ruleset/meta/ipcidr/private.mrs"}
+  cn_ip: {<<: *BehaviorIP, url: "https://raw.githubusercontent.com/HenryChiao/mihomo_yamls/refs/heads/ruleset/meta/ipcidr/cn.mrs"}
   
   # ==================== FakeIP过滤 ====================
   fakeip-filter: {type: http, interval: 86400, behavior: domain, format: text, url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs"}
