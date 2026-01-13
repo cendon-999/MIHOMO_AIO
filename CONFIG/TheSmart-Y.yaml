@@ -494,9 +494,6 @@ rule-providers:
   ai: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/HenryChiao/mihomo_yamls/refs/heads/ruleset/meta/domain/ai.mrs"}
   aiip: {<<: *BehaviorIP, url: "https://github.com/666OS/rules/raw/release/mihomo/ip/AI.mrs"}
   
-  # ==================== FCM ====================
-  fcm: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/googlefcm.mrs"}
-  
   # ==================== 社交平台 ====================
   telegram: {<<: *BehaviorDN, url: "https://git.imee.me/https://github.com/666OS/rules/raw/release/mihomo/domain/Telegram.mrs"}
   telegram_ip: {<<: *BehaviorIP, url: "https://git.imee.me/https://github.com/666OS/rules/raw/release/mihomo/ip/Telegram.mrs"}
@@ -542,6 +539,9 @@ rule-providers:
   blizzard: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/blizzard.mrs"}
   sony: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/sony.mrs"}
   nintendo: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nintendo.mrs"}
+
+  # ==================== FCM ====================
+  fcm: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/googlefcm.mrs"}
   
   # ==================== 商业服务 ====================
   github: {<<: *BehaviorDN, url: "https://github.com/666OS/rules/raw/refs/heads/release/mihomo/domain/GitHub.mrs"}
