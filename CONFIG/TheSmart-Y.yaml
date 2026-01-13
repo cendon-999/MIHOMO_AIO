@@ -382,6 +382,19 @@ rules:
   - RULE-SET,bilibili_ip,哔哩哔哩,no-resolve
   - RULE-SET,bahamut,巴哈姆特
 
+  # ==================== 流媒体 ====================
+  - RULE-SET,youtube,油管视频
+  - RULE-SET,tiktok,TikTok
+  - RULE-SET,netflix,奈飞视频
+  - RULE-SET,netflix_ip,奈飞视频,no-resolve
+  - RULE-SET,disney,迪士尼+
+  - RULE-SET,hbo,HBO视频
+  - RULE-SET,primevideo,Prime视频
+  - RULE-SET,appletv,AppleTV+
+  - RULE-SET,emby,Emby
+  - RULE-SET,emby_ip,Emby,no-resolve
+  - RULE-SET,spotify,Spotify
+  
   # ==================== 国内金融 / AI / 直连 ====================
   - RULE-SET,bank_cn,全球直连
   - RULE-SET,ai_cn,全球直连
@@ -410,19 +423,6 @@ rules:
   - RULE-SET,signal,Signal
   - RULE-SET,discord,Discord
   - RULE-SET,discord_asn,Discord,no-resolve
-
-  # ==================== 流媒体 ====================
-  - RULE-SET,youtube,油管视频
-  - RULE-SET,tiktok,TikTok
-  - RULE-SET,netflix,奈飞视频
-  - RULE-SET,netflix_ip,奈飞视频,no-resolve
-  - RULE-SET,disney,迪士尼+
-  - RULE-SET,hbo,HBO视频
-  - RULE-SET,primevideo,Prime视频
-  - RULE-SET,appletv,AppleTV+
-  - RULE-SET,emby,Emby
-  - RULE-SET,emby_ip,Emby,no-resolve
-  - RULE-SET,spotify,Spotify
 
   # ==================== Meta / X ====================
   - RULE-SET,facebook,Meta平台
