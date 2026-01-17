@@ -376,6 +376,7 @@ rules:
   - RULE-SET,aiip,人工智能,no-resolve
   - RULE-SET,openai,人工智能
   - RULE-SET,claude,人工智能
+  - RULE-SET,gemini,人工智能
 
   # ==================== Bilibili / ACG ====================
   - RULE-SET,biliintl,哔哩东南亚
@@ -492,6 +493,7 @@ rule-providers:
   # ==================== AI服务 ====================
   openai: {type: http, interval: 86400, behavior: domain, format: yaml, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OpenAI/OpenAI.yaml}
   claude: {type: http, interval: 86400, behavior: domain, format: yaml, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Claude/Claude.yaml}
+  gemini: {type: http, interval: 86400, behavior: domain, format: yaml, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Gemini/Gemini.list}
   ai: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/HenryChiao/mihomo_yamls/refs/heads/ruleset/meta/domain/ai.mrs"}
   aiip: {<<: *BehaviorIP, url: "https://github.com/666OS/rules/raw/release/mihomo/ip/AI.mrs"}
   
