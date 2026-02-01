@@ -168,9 +168,8 @@ dns:
     - "+.market.xiaomi.com"
     - "+.pub.3gppnetwork.org"
     - "+.push.apple.com"
-    - rule-set:Direct
-    - rule-set:Private
-    - rule-set:China
+    - 'RULE-SET:fakeip-filter,Private,Direct,China,xiaomi,pt_cn,115,aliyun,NetEaseMusic,ai_cn,game_cn,public-tracker,apple_firmware'
+    
   use-hosts: true
   respect-rules: true
   # 引导：解析上游 DoH/DoT 的起始 DNS
@@ -383,5 +382,17 @@ rule-providers:
   AWAvenueAds:    {<<: *BehaviorDY, url: https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Clash.yaml}
   # 新增规则
   github:          {<<: *ClassicalYaml, url: https://rule.kelee.one/Clash/GitHub.yaml}
+  # ==================== FakeIP过滤 ====================
+  fakeip-filter: {<<: *BehaviorDN, url: "https://github.com/DustinWin/ruleset_geodata/releases/download/mihomo-ruleset/fakeip-filter.mrs"}
+  game_cn: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games@cn.mrs"}
+  apple_firmware: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/Lanlan13-14/Rules/main/rules/Domain/applefirmware.mrs"}
+  xiaomi: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/xiaomi.mrs"}
+  pt_cn: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-pt.mrs"}
+  public-tracker: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-public-tracker.mrs"}
+  115: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/115.mrs"}
+  aliyun: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/aliyun.mrs"}
+  NetEaseMusic: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/Lanlan13-14/Rules/main/rules/Domain/NetEaseMusic-domain.mrs"}
+  ai_cn: {<<: *BehaviorDN, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-cn.mrs"}
 
-# ==================== EOF ====================
+   # ==================== EOF ====================
+
