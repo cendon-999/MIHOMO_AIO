@@ -271,7 +271,7 @@ rules:
   - AND,((DST-PORT,443),(NETWORK,UDP)),REJECT  # 阻止 QUIC
 
   # 域名规则
-  - RULE-SET,ukwifi,UKwifi
+  #- RULE-SET,ukwifi,UKwifi
   - RULE-SET,LocationDKS,抖快书定位
   - RULE-SET,Private,直接连接
   - RULE-SET,Direct,直接连接
