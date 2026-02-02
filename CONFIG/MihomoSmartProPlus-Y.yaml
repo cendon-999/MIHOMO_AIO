@@ -174,8 +174,8 @@ dns:
   respect-rules: true
   # 引导：解析上游 DoH/DoT 的起始 DNS
   default-nameserver:
-    - tls://223.5.5.5
-    - tls://223.6.6.6
+    - 1.12.12.12
+    - 180.184.1.1
   # 代理路径用的国外上游（仅对需代理的非直连规则集域名）
   nameserver:
     - "https://cloudflare-dns.com/dns-query"
