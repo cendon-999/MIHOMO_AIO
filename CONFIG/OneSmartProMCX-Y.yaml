@@ -12,7 +12,7 @@
 # 地址: https://github.com/666OS/YYDS
 # 版本: v26.1.1
 # 作者: YYDS666
-# 更新: 2026 年 1 月 30 日
+# 更新: 2026 年 2月 13 日
 # 频道: https://t.me/Pinched666
 # 描述: 基于Mihomo的智能代理配置，提供四层架构智能路由和全场景规则集
 # 集成Smart算法自动选择最优节点，支持故障转移和负载均衡
@@ -61,16 +61,19 @@ SelectDC: &SelectDC {type: select, proxies: [国内直连]}                     
 proxy-providers:
 
   #节点A - 优质节点集合，使用时请修改
-  优质服务商: {<<: *BaseProvider, url: '你的优质机场订阅链接', override: {additional-suffix: ' [优]'}}
+  优质服务商: {<<: *BaseProvider, url: '优质订阅源地址1', override: {additional-suffix: ' [优]'}}
 
   # 次优质订阅源 - 次优节点集合，使用时请修改
-  次优服务商: {<<: *BaseProvider, url: '你的次优质机场订阅链接', override: {additional-suffix: ' [次]'}}
+  次优服务商: {<<: *BaseProvider, url: '优质订阅源地址2', override: {additional-suffix: ' [次]'}}
 
   # 备用订阅源 - 次优节点集合，使用时请修改
-  备用服务商: {<<: *BaseProvider, url: '你的备用机场订阅链接', override: {additional-suffix: ' [备]'}}
+  备用服务商: {<<: *BaseProvider, url: '备用订阅源地址', override: {additional-suffix: ' [备]'}}
+
+  # 自建订阅源 - 自建节点集合，使用时请修改
+  聚合服务商: {<<: *BaseProvider, url: '自建订阅源地址', override: {additional-prefix: '[自建] '}}
 
   # 落地订阅源 - 落地服务连接，使用时请修改
-  落地服务商: {<<: *BaseProvider, url: '落地订阅源地址', override: {additional-suffix: ' [中]', dialer-proxy: 中转服务}}
+  落地服务商: {<<: *BaseProvider, url: '中转订阅源地址', override: {additional-suffix: ' [中]', dialer-proxy: 中转服务}}
 
 
 
@@ -166,7 +169,7 @@ sniffer:
 # TUN模式配置
 tun:
   enable: true                             # 开启 TUN 模式
-  stack: mixed                             # 协议栈：mixed (混合) / system / gvisor
+  stack: gvisor                             # 协议栈：mixed (混合) / system / gvisor
   dns-hijack:                              # DNS 劫持 (强制接管设备 DNS 查询)
     - "any:53"                             # 劫持所有 UDP 53
     - "tcp://any:53"                       # 劫持所有 TCP 53
@@ -174,6 +177,12 @@ tun:
   auto-detect-interface: true              # 自动检测网络接口
   auto-redirect: true                      # 自动配置 iptables 重定向
   endpoint-independent-nat: true           # 独立 NAT (Full Cone)，优化游戏/P2P 连接质量
+
+hosts:
+  dns.alidns.com: [223.5.5.5, 223.6.6.6, 2400:3200::1, 2400:3200:baba::1]
+  doh.pub: [1.12.12.12, 120.53.53.53]
+  dns.google: [8.8.8.8, 8.8.4.4, 2001:4860:4860::8888, 2001:4860:4860::8844]
+  cloudflare-dns.com: [1.1.1.1, 1.0.0.1, 2606:4700:4700::1111, 2606:4700:4700::1001]
 
 # DNS配置
 dns:
@@ -183,9 +192,8 @@ dns:
   enhanced-mode: fake-ip                   # 模式：fake-ip，redir-host
   fake-ip-range: 198.18.0.1/16             # Fake-IP 地址池范围（私有地址段，不会与真实 IP 冲突）
   default-nameserver:                      # 用于解析下方 nameserver 中 DoH/DoT 的域名
-    - 223.5.5.5
-    - 119.29.29.29
-    - 180.184.1.1
+    - 202.103.24.68
+    - 202.103.44.150
   nameserver:                              # 主 DNS 服务器列表（用于实际域名解析）        
     - https://dns.alidns.com/dns-query#h3=true
 
@@ -232,7 +240,8 @@ proxy-groups:
   - {name: 国内直连,     type: select, proxies: [DIRECT], hidden: true, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/China.png}
 
     # 中转服务层 - LoadBalance负载均衡，提供中转服务提升连通性，选用一个或多个服务商做中转，比如 优质服务商，可通过正则表达式，过滤掉不需要的节点，使用时请修改
-  - {name: 中转服务,   <<: *BaseLB, use: [优质服务商], filter: 'HK|TW', hidden: true, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Round_Robin.png}
+  - {name: 自建/家宽节点, type: select, include-all: true, filter: "(?=.*(?i)(自建|home))", icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png}
+  - {name: 中转服务, type: select, proxies: [香港-智能, 台湾-智能, 日本-智能, 狮城-智能, 美国-智能, 国内直连, 自建/家宽节点] icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Round_Robin.png}
 
     # 线路特性层 - Fallback故障转移，（适合不想节点总是被切换或者对固定IP有要求，若手动选择节点飘红 会自动切到智能策略组，保证节点可用性）,（不需要该策略可以在组名上添加 # 注释）
   - {name: 香港-故转,  <<: *BaseFB, proxies: [香港-手选, 香港-智能 ], icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Hong_Kong.png}
