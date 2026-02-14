@@ -248,7 +248,7 @@ proxy-groups:
   filter: '^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)).*$', 
   icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Global.png}
   - {name: 自建/家宽节点, type: select, include-all: true, filter: "(?=.*(?i)(自建|home))", icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png}
-  - {name: 中转服务, type: select, proxies: [香港智能, 台湾智能, 日本智能, 狮城智能, 美国智能, 国内直连, 自建/家宽节点], icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Round_Robin.png, include-all: true, filter: *FilterAL}
+  - {name: 中转服务, type: select, proxies: [香港智能, 台湾智能, 日本智能, 狮城智能, 美国智能, 国内直连, 自建/家宽节点], icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Round_Robin.png, include-all: true, filter: filter: '^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)).*$'}
 
     # 线路特性层 - Fallback故障转移，（适合不想节点总是被切换或者对固定IP有要求，若手动选择节点飘红 会自动切到智能策略组，保证节点可用性）,（不需要该策略可以在组名上添加 # 注释）
   - {name: 香港-故转,  <<: *BaseFB, proxies: [香港-手选, 香港智能 ], icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Hong_Kong.png}
