@@ -212,7 +212,7 @@ dns:
     - RULE-SET,Telegram,fake-ip
     - RULE-SET,SocialMedia,fake-ip
     - RULE-SET,NewsMedia,fake-ip
-    - RULE-SET,Games,fake-ip
+    - RULE-SET,Games,real-ip
     - RULE-SET,Crypto,fake-ip
     - RULE-SET,Emby,fake-ip
     - RULE-SET,Netflix,fake-ip
