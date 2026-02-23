@@ -80,9 +80,9 @@ unified-delay: true
 tcp-concurrent: true
 log-level: warning
 bind-address: '*'
-find-process-mode: strict
+find-process-mode: always
 global-ua: mihomo
-keep-alive-interval: 30
+keep-alive-interval: 15
 keep-alive-idle: 600
 etag-support: true
 
