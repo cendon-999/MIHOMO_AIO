@@ -315,7 +315,7 @@ tunnels:
 rules:
   # ==================== 基础拦截（最前，不参与业务分流） ====================
   - RULE-SET,Tracking,REJECT
-  - RULE-SET,Advertising,REJECT
+  #- RULE-SET,Advertising,REJECT
   #- AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((GEOIP,CN)))),REJECT  # 阻止海外 QUIC
   
   # 域名规则
@@ -354,7 +354,7 @@ rules:
   - RULE-SET,China,国内流量
 
   # IP规则
-  - RULE-SET,AdvertisingIP,REJECT,no-resolve
+  #- RULE-SET,AdvertisingIP,REJECT,no-resolve
   - RULE-SET,PrivateIP,直接连接,no-resolve
   - RULE-SET,XPTVIP,直接连接,no-resolve
   - RULE-SET,AIIP,人工智能,no-resolve
