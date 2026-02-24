@@ -190,8 +190,8 @@ dns:
   nameserver-policy:
     "rule-set:Tracking,Advertising": rcode://success
     "rule-set:LocationDKS,Private,Direct,XPTV,Download,AppleCN,China":
-      - 1.12.12.12
-      - 180.184.1.1
+      - 202.103.24.68
+      - 202.103.44.150
     "rule-set:Github,AI,Speedtest,Twitter,Telegram,SocialMedia,NewsMedia,Games,Crypto,Emby,Netflix,YouTube,Streaming,Apple,Google,Microsoft,Proxy":
       - https://8.8.8.8/dns-query#RULES&ecs=223.5.5.0/24
       - https://cloudflare-dns.com/dns-query
