@@ -8,7 +8,6 @@
 
 # ==================== 锚点配置 ====================
 # 代理提供者模板 - 订阅源基础配置
-#BaseProvider: &BaseProvider {type: http, interval: 86400, proxy: DIRECT, health-check: {enable: true, url: 'https://www.google.com/generate_204', interval: 300}, filter: '^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))'}
 BaseProvider: &BaseProvider {type: http, interval: 86400, proxy: DIRECT, health-check: {enable: true, url: 'https://cp.cloudflare.com/generate_204', interval: 300}, header: {User-Agent: ['clash.meta', 'mihomo/1.18.3']}, override: {skip-cert-verify: true, udp: true}}
 filter: '^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))'
 
@@ -159,7 +158,7 @@ sniffer:
 tun:
   enable: true
   # system/gvisor/mixed
-  stack: mixed
+  stack: gvisor
   dns-hijack: ["any:53", "tcp://any:53"]
   #使用nikki，混入全部不修改的情况，开启接口指定为nikki
   #device: nikki
@@ -200,6 +199,8 @@ dns:
       - https://cloudflare-dns.com/dns-query
   fake-ip-filter-mode: rule
   fake-ip-filter:
+    - "+.baidu.com"
+    - "+.bdstatic.com"
     - RULE-SET,fakeip-filter,real-ip
     - DOMAIN,mimimi.com,real-ip
     - RULE-SET,LocationDKS,real-ip
@@ -312,6 +313,10 @@ tunnels:
   
 # ==================== 路由规则 (优化顺序) ====================
 rules:
+  # ==================== 百度白名单（防止图片/搜索异常） ====================
+  - DOMAIN,nsclick.baidu.com,DIRECT
+  - DOMAIN-SUFFIX,bdstatic.com,DIRECT
+  - DOMAIN-SUFFIX,baidu.com,DIRECT
   # ==================== 基础拦截（最前，不参与业务分流） ====================
   - RULE-SET,Tracking,REJECT
   - RULE-SET,Advertising,REJECT
