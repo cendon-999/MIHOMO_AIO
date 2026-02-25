@@ -200,6 +200,7 @@ dns:
   fake-ip-filter:
   - "+.baidu.com"
   - "+.bdstatic.com"
+  - "+.baidustatic.com"
   - rule-set:fakeip-filter                 # Fake-IP 过滤列表（这些域名将返回真实 IP 而非 Fake-IP）
   - rule-set:Private
   - rule-set:China
