@@ -198,6 +198,8 @@ dns:
     - https://dns.alidns.com/dns-query#h3=true
 
   fake-ip-filter:
+  - "+.baidu.com"
+  - "+.bdstatic.com"
   - rule-set:fakeip-filter                 # Fake-IP 过滤列表（这些域名将返回真实 IP 而非 Fake-IP）
   - rule-set:Private
   - rule-set:China
@@ -278,6 +280,10 @@ proxy-groups:
 
 
 rules:
+# ==================== 百度白名单（防止图片/搜索异常） ====================
+  - DOMAIN,nsclick.baidu.com,DIRECT
+  - DOMAIN-SUFFIX,bdstatic.com,DIRECT
+  - DOMAIN-SUFFIX,baidu.com,DIRECT
 # ==================== 特定IP分流规则 ====================
 #- IP-CIDR,你需要的代理IP/32,Proxy                                     #需要强制走代理的IP
 #- SRC-IP-CIDR,你需要走直连的IP/32,国内直连                             #需要强制走国内的IP
