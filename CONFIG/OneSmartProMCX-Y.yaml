@@ -33,18 +33,18 @@ BaseSmart: &BaseSmart {type: smart, interval: 300, lazy: true, url: 'https://cp.
 # =========================
 # 节点筛选正则（前置模板）
 # --- 常用地区节点 ---
-FilterHK: &FilterHK { filter: '^(?i).*(港|🇭🇰|Hong|HKG|HK\d+|HK[-_ ]?\d*).*$', icon: 'https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Hong_Kong.png' }
-FilterSG: &FilterSG { filter: '^(?i).*(坡|🇸🇬|Sing|SIN|SG\d+|SG[-_ ]?\d*|XSP).*$', icon: 'https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Singapore.png' }
-FilterJP: &FilterJP { filter: '^(?i).*(日|🇯🇵|JP|Japan|NRT|HND|KIX|CTS|FUK).*$', icon: 'https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Japan.png' }
-FilterUS: &FilterUS { filter: '^(?i).*(美|🇺🇸|US|USA|SJC|JFK|LAX|ORD|ATL|DFW|SFO|MIA|SEA|IAD).*$', icon: 'https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_States.png' }
-FilterTW: &FilterTW { filter: '^(?i).*(台|🇼🇸|🇹🇼|TW|tai|TPE|TSA|KHH).*$', icon: 'https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Taiwan.png' }
+FilterHK: &FilterHK { filter: '^(?i).*(港|🇭🇰|Hong|HKG|HK\d+|HK[-_ ]?\d*).*$', icon: 'https://github.com/Koolson/Qure/raw/master/IconSet/Color/Hong_Kong.png' }
+FilterSG: &FilterSG { filter: '^(?i).*(坡|🇸🇬|Sing|SIN|SG\d+|SG[-_ ]?\d*|XSP).*$', icon: 'https://github.com/Koolson/Qure/raw/master/IconSet/Color/Singapore.png' }
+FilterJP: &FilterJP { filter: '^(?i).*(日|🇯🇵|JP|Japan|NRT|HND|KIX|CTS|FUK).*$', icon: 'https://github.com/Koolson/Qure/raw/master/IconSet/Color/Japan.png' }
+FilterUS: &FilterUS { filter: '^(?i).*(美|🇺🇸|US|USA|SJC|JFK|LAX|ORD|ATL|DFW|SFO|MIA|SEA|IAD).*$', icon: 'https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_States.png' }
+FilterTW: &FilterTW { filter: '^(?i).*(台|🇼🇸|🇹🇼|TW|tai|TPE|TSA|KHH).*$', icon: 'https://github.com/Koolson/Qure/raw/master/IconSet/Color/Taiwan.png' }
 # --- 冷门节点 ---
 FilterEU: &FilterEU { filter: '^(?i)(?!.*(🇭🇰|香港|hong\s?kong|\bHK\b|🇸🇬|新加坡|singapore|\bSG\b|🇯🇵|日本|japan|\bJP\b|🇹🇼|台湾|taiwan|TW\d+|TW[-_ ]?\d*|🇺🇸|美国|united\s?states|usa|\bUS\b)).*$', icon: 'https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/European_Union.png' } # 冷门节点
 # --- 倍率节点筛选 ---
-FilterLR: &FilterLR { filter: '(?=.*(?i)(0\.01|0\.1|0\.2|0\.3|0\.4|0\.5|0\.6|0\.7|0\.8|下载|实验)).*$', icon: 'https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Round_Robin_1.png' } # 低倍率
-FilterHR: &FilterHR { filter: '^(?=.*(?i)(2x|3x|4x|5x|6x|x2|x3|x4|x5|x6|2\.0x|2\.5x|3\.0x|4\.0x|5\.0x|6\.0x|2\.00x|3\.00x|4\.00x|5\.00x|6\.00x|高级)).*$', icon: 'https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Round_Robin.png' } # 高倍率
+FilterLR: &FilterLR { filter: '(?=.*(?i)(0\.01|0\.1|0\.2|0\.3|0\.4|0\.5|0\.6|0\.7|0\.8|下载|实验)).*$', icon: 'https://github.com/Koolson/Qure/raw/master/IconSet/Color/Round_Robin_1.png' } # 低倍率
+FilterHR: &FilterHR { filter: '^(?=.*(?i)(2x|3x|4x|5x|6x|x2|x3|x4|x5|x6|2\.0x|2\.5x|3\.0x|4\.0x|5\.0x|6\.0x|2\.00x|3\.00x|4\.00x|5\.00x|6\.00x|高级)).*$', icon: 'https://github.com/Koolson/Qure/raw/master/IconSet/Color/Round_Robin.png' } # 高倍率
 # --- 全部节点 ---
-FilterAL: &FilterAL { filter: '^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)).*$', icon: 'https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Global.png' }
+FilterAL: &FilterAL { filter: '^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)).*$', icon: 'https://github.com/Koolson/Qure/raw/master/IconSet/Color/Global.png' }
 
 
 # =========================
