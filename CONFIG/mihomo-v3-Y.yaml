@@ -273,6 +273,18 @@ dns:
     - RULE-SET,Proxy,fake-ip
     - RULE-SET,China,real-ip
     - MATCH,real-ip
+    - "+.activision.com"      # 动视账号与登录验证
+    - "+.callofduty.com"      # COD 官方域名
+    - "+.battle.net"          # 战网客户端
+    - "+.blizzard.com"        # 暴雪后端服务
+    - "+.battlenet.com"
+    - "+.blzstatic.cn"
+    - "+.nintendo.net"
+    - "+.xboxlive.com"
+    - "+.stun.playstation.net"
+    - "+.docker.io"
+    - "+.miwifi.com"
+    - "+.stun.*"
 
 # ==================== 静态代理节点 ====================
 # 直连控制节点：IP版本及UDP行为精细化控制
