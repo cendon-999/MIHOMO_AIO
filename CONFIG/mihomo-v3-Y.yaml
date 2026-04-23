@@ -206,8 +206,8 @@ tun:
   auto-redirect: false
   auto-detect-interface: false
   # 以下为融合第二份增强参数（纯内核模式下开启，nikki 模式不需要）
-  # strict-route: true
-  # disable-icmp-forwarding: true
+  strict-route: true
+  disable-icmp-forwarding: true
 
 # ==================== DNS配置 ====================
 dns:
