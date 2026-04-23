@@ -439,9 +439,9 @@ rules:
   - DOMAIN,access.mypikpak.net,REJECT
   - DOMAIN,access.pikpak.me,REJECT
   - DOMAIN,access.pikpakdrive.com,REJECT
-  - DOMAIN-KEYWORD,dl-a10b-,国内直连
-  - DOMAIN-KEYWORD,dl-z01a-,国内直连
-  - DOMAIN-REGEX,^dl-[A-Za-z0-9-]+\.mypikpak\.com$,国内直连
+  - DOMAIN-KEYWORD,dl-a10b-,直接连接
+  - DOMAIN-KEYWORD,dl-z01a-,直接连接
+  - DOMAIN-REGEX,^dl-[A-Za-z0-9-]+\.mypikpak\.com$,直接连接
 
   # ======== 代理服务 ========
   - RULE-SET,Captcha,人机验证           # 人机验证走代理
