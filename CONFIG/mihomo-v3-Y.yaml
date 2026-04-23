@@ -177,7 +177,7 @@ sniffer:
   enable: true
   force-dns-mapping: true      # 强制 fakeip 域名映射嗅探
   parse-pure-ip: true          # 纯 IP 连接也嗅探
-  override-destination: false  # 保持第二份保守值，避免重写目标
+  override-destination: true  # 保持第二份保守值，避免重写目标
   sniff:
     HTTP:
       ports: [80, 8080-8880]
@@ -225,6 +225,7 @@ dns:
   fake-ip-range6: fd00:bada:55ed::1/64 # IPv6 FakeIP 范围
   default-nameserver:
     - https://223.5.5.5/dns-query
+    - https://1.12.12.12/dns-query
     #- 202.103.24.68
     #- 202.103.44.150
   proxy-server-nameserver: *direct-dns
