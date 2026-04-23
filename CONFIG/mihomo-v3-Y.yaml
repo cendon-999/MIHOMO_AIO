@@ -202,9 +202,10 @@ tun:
   dns-hijack: ["any:53", "tcp://any:53"]
   # 使用 nikki 时取消注释下面一行，并将 auto-route 等改为 false
   device: nikki
-  auto-route: false
-  auto-redirect: false
-  auto-detect-interface: false
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+  endpoint-independent-nat: true           # 独立 NAT (Full Cone)，优化游戏/P2P 连接质量
   # 以下为融合第二份增强参数（纯内核模式下开启，nikki 模式不需要）
   strict-route: true
   disable-icmp-forwarding: true
