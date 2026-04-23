@@ -51,12 +51,12 @@ FilterOT: &FilterOT '^(?!.*(DIRECT|直接连接|美|港|坡|台|新|日|韩|奥|
 FilterAL: &FilterAL '^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))'
 
 # 策略组代理列表模板
-SelectFB: &SelectFB {type: select, proxies: [故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 加拿大策略, 德国策略, 英国策略, 法国策略, 荷兰策略, 冷门自选, 全球手动, 直接连接]}
-SelectPY: &SelectPY {type: select, proxies: [默认代理, 故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 加拿大策略, 德国策略, 英国策略, 法国策略, 荷兰策略, 冷门自选, 全球手动, 直接连接]}
-SelectDC: &SelectDC {type: select, proxies: [直接连接, 默认代理, 故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 加拿大策略, 德国策略, 冷门自选, 全球手动]}
-SelectHK: &SelectHK {type: select, proxies: [香港策略, 默认代理, 故障转移, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 直接连接]}
-SelectSG: &SelectSG {type: select, proxies: [狮城策略, 默认代理, 故障转移, 香港策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 直接连接]}
-SelectUS: &SelectUS {type: select, proxies: [美国策略, 默认代理, 故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 台湾策略, 欧盟策略, 加拿大策略, 冷门自选, 全球手动, 直接连接]}
+SelectFB: &SelectFB {type: select, proxies: [故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 直接连接, 游戏节点, 自建/家宽节点]}
+SelectPY: &SelectPY {type: select, proxies: [默认代理, 故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 直接连接, 游戏节点, 自建/家宽节点]}
+SelectDC: &SelectDC {type: select, proxies: [直接连接, 默认代理, 故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 游戏节点, 自建/家宽节点]}
+SelectHK: &SelectHK {type: select, proxies: [香港策略, 默认代理, 故障转移, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 直接连接, 游戏节点, 自建/家宽节点]}
+SelectSG: &SelectSG {type: select, proxies: [狮城策略, 默认代理, 故障转移, 香港策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 直接连接, 游戏节点, 自建/家宽节点]}
+SelectUS: &SelectUS {type: select, proxies: [美国策略, 默认代理, 故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动, 直接连接, 游戏节点, 自建/家宽节点]}
 
 # DNS锚点
 direct-dns: &direct-dns ['https://dns.alidns.com/dns-query#直接连接', 'https://doh.pub/dns-query#直接连接&h3=false']
@@ -299,7 +299,7 @@ proxies:
 proxy-groups:
   # ==================== 主要策略组 ====================
   - {name: 默认代理,   <<: *SelectFB, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Static.png}
-  - {name: 故障转移,   <<: *BaseFB, proxies: [香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 加拿大策略, 德国策略, 全球手动, 冷门自选, 直接连接], icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/ULB.png}
+  - {name: 故障转移,   <<: *BaseFB, proxies: [香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 全球手动, 冷门自选, 直接连接, 游戏节点, 自建/家宽节点], icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/ULB.png}
   - {name: 国外流量,   <<: *SelectPY, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Global.png}
   - {name: 国内流量,   <<: *SelectDC, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/China.png}
   - {name: 兜底流量,   <<: *SelectPY, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Final.png}
@@ -342,15 +342,24 @@ proxy-groups:
   - {name: 美国策略,   type: select, proxies: [美国智能, 美国故障转移], include-all: true, filter: *FilterUS, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_States.png}
   - {name: 欧盟策略,   type: select, proxies: [欧洲智能, 欧洲故障转移], include-all: true, filter: *FilterEU, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/European_Union.png}
   # 融合第二份新增地区
-  - {name: 加拿大策略, type: select, proxies: [加拿大智能, 加拿大故障转移], include-all: true, filter: *FilterCA, icon: https://mihomo.echs.top/img/flags/ca.svg}
-  - {name: 德国策略,   type: select, proxies: [德国智能, 德国故障转移],   include-all: true, filter: *FilterDE, icon: https://mihomo.echs.top/img/flags/de.svg}
-  - {name: 英国策略,   type: select, proxies: [英国智能, 英国故障转移],   include-all: true, filter: *FilterUK, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_Kingdom.png}
-  - {name: 法国策略,   type: select, proxies: [法国智能, 法国故障转移],   include-all: true, filter: *FilterFR, icon: https://mihomo.echs.top/img/flags/fr.svg}
-  - {name: 荷兰策略,   type: select, proxies: [荷兰智能, 荷兰故障转移],   include-all: true, filter: *FilterNL, icon: https://mihomo.echs.top/img/flags/nl.svg}
+  #- {name: 加拿大策略, type: select, proxies: [加拿大智能, 加拿大故障转移], include-all: true, filter: *FilterCA, icon: https://mihomo.echs.top/img/flags/ca.svg}
+  #- {name: 德国策略,   type: select, proxies: [德国智能, 德国故障转移],   include-all: true, filter: *FilterDE, icon: https://mihomo.echs.top/img/flags/de.svg}
+  #- {name: 英国策略,   type: select, proxies: [英国智能, 英国故障转移],   include-all: true, filter: *FilterUK, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_Kingdom.png}
+  #- {name: 法国策略,   type: select, proxies: [法国智能, 法国故障转移],   include-all: true, filter: *FilterFR, icon: https://mihomo.echs.top/img/flags/fr.svg}
+  #- {name: 荷兰策略,   type: select, proxies: [荷兰智能, 荷兰故障转移],   include-all: true, filter: *FilterNL, icon: https://mihomo.echs.top/img/flags/nl.svg}
 
   # ==================== 其他策略组 ====================
   - {name: 冷门自选,   type: select, include-all: true, filter: *FilterOT, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Europe_Map.png}
   - {name: 全球手动,   type: select, include-all: true, filter: *FilterAL, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Clubhouse.png}
+
+  # 中转服务层 - LoadBalance负载均衡，提供中转服务提升连通性，选用一个或多个服务商做中转，比如 优质服务商，可通过正则表达式，过滤掉不需要的节点，使用时请修改
+  - {name: 游戏节点, type: select, include-all: true, 
+     filter: '^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)).*$', 
+     icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Global.png}
+  - {name: 自建/家宽节点, type: select, include-all: true, filter: "(?=.*(?i)(自建|home))", icon: https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png}
+  - {name: 中转服务, type: select, include-all: true,
+     filter: '^(?!.*(DIRECT|直接连接|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author)).*$',
+     icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Round_Robin.png}
 
   # ==================== Smart 智能选择层 ====================
   # policy-priority: 优>中>备，按订阅前缀加权
@@ -361,12 +370,12 @@ proxy-groups:
   - {name: 狮城智能,   <<: *BaseSmart, filter: *FilterSG, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Singapore.png}
   - {name: 韩国智能,   <<: *BaseSmart, filter: *FilterKR, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Korea.png}
   - {name: 美国智能,   <<: *BaseSmart, filter: *FilterUS, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_States.png}
-  - {name: 英国智能,   <<: *BaseSmart, filter: *FilterUK, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_Kingdom.png}
+  #- {name: 英国智能,   <<: *BaseSmart, filter: *FilterUK, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_Kingdom.png}
   - {name: 欧洲智能,   <<: *BaseSmart, filter: *FilterEU, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/European_Union.png}
-  - {name: 加拿大智能, <<: *BaseSmart, filter: *FilterCA, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://mihomo.echs.top/img/flags/ca.svg}
-  - {name: 德国智能,   <<: *BaseSmart, filter: *FilterDE, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://mihomo.echs.top/img/flags/de.svg}
-  - {name: 法国智能,   <<: *BaseSmart, filter: *FilterFR, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://mihomo.echs.top/img/flags/fr.svg}
-  - {name: 荷兰智能,   <<: *BaseSmart, filter: *FilterNL, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://mihomo.echs.top/img/flags/nl.svg}
+  #- {name: 加拿大智能, <<: *BaseSmart, filter: *FilterCA, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://mihomo.echs.top/img/flags/ca.svg}
+  #- {name: 德国智能,   <<: *BaseSmart, filter: *FilterDE, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://mihomo.echs.top/img/flags/de.svg}
+  #- {name: 法国智能,   <<: *BaseSmart, filter: *FilterFR, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://mihomo.echs.top/img/flags/fr.svg}
+  #- {name: 荷兰智能,   <<: *BaseSmart, filter: *FilterNL, include-all: true, policy-priority: '优:2;中:1;备:0.2', icon: https://mihomo.echs.top/img/flags/nl.svg}
   # ==================== Fallback 故障转移层（通用备用，无需LightGBM）====================
   # 当 Smart 不可用或需要纯延迟优先时，在地区策略组面板切换到对应故障转移
   - {name: 香港故障转移,   <<: *BaseFall, filter: *FilterHK, include-all: true, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Hong_Kong.png}
@@ -375,12 +384,12 @@ proxy-groups:
   - {name: 狮城故障转移,   <<: *BaseFall, filter: *FilterSG, include-all: true, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Singapore.png}
   - {name: 韩国故障转移,   <<: *BaseFall, filter: *FilterKR, include-all: true, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Korea.png}
   - {name: 美国故障转移,   <<: *BaseFall, filter: *FilterUS, include-all: true, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_States.png}
-  - {name: 英国故障转移,   <<: *BaseFall, filter: *FilterUK, include-all: true, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_Kingdom.png}
+  #- {name: 英国故障转移,   <<: *BaseFall, filter: *FilterUK, include-all: true, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/United_Kingdom.png}
   - {name: 欧洲故障转移,   <<: *BaseFall, filter: *FilterEU, include-all: true, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/European_Union.png}
-  - {name: 加拿大故障转移, <<: *BaseFall, filter: *FilterCA, include-all: true, icon: 'https://mihomo.echs.top/img/flags/ca.svg'}
-  - {name: 德国故障转移,   <<: *BaseFall, filter: *FilterDE, include-all: true, icon: 'https://mihomo.echs.top/img/flags/de.svg'}
-  - {name: 法国故障转移,   <<: *BaseFall, filter: *FilterFR, include-all: true, icon: 'https://mihomo.echs.top/img/flags/fr.svg'}
-  - {name: 荷兰故障转移,   <<: *BaseFall, filter: *FilterNL, include-all: true, icon: 'https://mihomo.echs.top/img/flags/nl.svg'}
+  #- {name: 加拿大故障转移, <<: *BaseFall, filter: *FilterCA, include-all: true, icon: 'https://mihomo.echs.top/img/flags/ca.svg'}
+  #- {name: 德国故障转移,   <<: *BaseFall, filter: *FilterDE, include-all: true, icon: 'https://mihomo.echs.top/img/flags/de.svg'}
+  #- {name: 法国故障转移,   <<: *BaseFall, filter: *FilterFR, include-all: true, icon: 'https://mihomo.echs.top/img/flags/fr.svg'}
+  #- {name: 荷兰故障转移,   <<: *BaseFall, filter: *FilterNL, include-all: true, icon: 'https://mihomo.echs.top/img/flags/nl.svg'}
 
 # ==================== Telegram 直连隧道 ====================
 # 请根据面板获取当前 Telegram DC IP 后调整
@@ -415,6 +424,24 @@ rules:
   - RULE-SET,AppleCN,直接连接
   - RULE-SET,MicrosoftCN,直接连接       # 微软中国直连
   - RULE-SET,GamesCN,直接连接           # 国内游戏直连
+
+  # ==================== 独立/特定分流规则 ====================
+  - DOMAIN-KEYWORD,synology,DIRECT
+  - DOMAIN-KEYWORD,callofduty,游戏节点
+  - DOMAIN-KEYWORD,hinet.net,台湾智能
+  - DOMAIN-KEYWORD,hoy.tv,香港智能
+  - DOMAIN-KEYWORD,rthktv,香港智能
+  - DOMAIN-KEYWORD,iill,香港智能
+  - DOMAIN-KEYWORD,fengshows,DIRECT
+  #- DOMAIN-KEYWORD,miguvideo,香港智能
+  # --- PikPak (屏蔽地区检测/直连下载) ---
+  - DOMAIN,access.mypikpak.com,REJECT
+  - DOMAIN,access.mypikpak.net,REJECT
+  - DOMAIN,access.pikpak.me,REJECT
+  - DOMAIN,access.pikpakdrive.com,REJECT
+  - DOMAIN-KEYWORD,dl-a10b-,国内直连
+  - DOMAIN-KEYWORD,dl-z01a-,国内直连
+  - DOMAIN-REGEX,^dl-[A-Za-z0-9-]+\.mypikpak\.com$,国内直连
 
   # ======== 代理服务 ========
   - RULE-SET,Captcha,人机验证           # 人机验证走代理
