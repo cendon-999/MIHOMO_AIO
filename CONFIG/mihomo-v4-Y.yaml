@@ -415,7 +415,7 @@ rules:
   # ======== 基础拦截 ========
   - RULE-SET,Tracking,REJECT
   - RULE-SET,Advertising,REJECT
-  #- AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((GEOIP,CN)))),REJECT        # 阻止海外 QUIC
+  - AND,((DST-PORT,443),(NETWORK,UDP),(NOT,((GEOIP,CN)))),REJECT        # 阻止海外 QUIC
 
   # ======== 直连优先 ========
   - RULE-SET,PrivateIP,直接连接,no-resolve
