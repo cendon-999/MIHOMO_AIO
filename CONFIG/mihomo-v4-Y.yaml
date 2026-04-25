@@ -301,8 +301,8 @@ proxy-groups:
   - {name: 默认代理,   <<: *SelectFB, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Static.png}
   - {name: 故障转移,   <<: *BaseFB, proxies: [香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 全球手动, 冷门自选, 直接连接, 游戏节点, 自建/家宽节点], icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/ULB.png}
   - {name: 国外流量,   <<: *SelectPY, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Global.png}
-  - {name: 代理UDP,    type: select, proxies: [PASS, REJECT], icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Speed.png}  # UDP跟随TCP(PASS)或拒绝(REJECT)
-  - {name: FCM服务,    type: select, proxies: [直接连接, 默认代理, 故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动], icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Infomation.png}  # FCM推送：可直连可代理
+  - {name: 代理UDP,    type: select, proxies: [PASS, REJECT], icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Airport.png}  # UDP跟随TCP(PASS)或拒绝(REJECT)
+  - {name: FCM服务,    type: select, proxies: [直接连接, 默认代理, 故障转移, 香港策略, 狮城策略, 日本策略, 韩国策略, 美国策略, 台湾策略, 欧盟策略, 冷门自选, 全球手动], icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Google_Drive.png}  # FCM推送：可直连可代理
   - {name: 国内流量,   <<: *SelectDC, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/China.png}
   - {name: 兜底流量,   <<: *SelectPY, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Final.png}
   - {name: 直接连接,   type: select, proxies: [DIRECT, IPV4优先, IPV6优先, 仅IPV4, 仅IPV6], hidden: true, icon: https://github.com/Koolson/Qure/raw/master/IconSet/Color/Direct.png}
